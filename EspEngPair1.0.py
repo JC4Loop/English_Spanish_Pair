@@ -1,7 +1,6 @@
 from tkinter import*
 import time
 from random import shuffle
-#from pairDb import getPairs,
 from pairDb import*
 
 
@@ -24,14 +23,18 @@ class Component:
 		self.y = y
 		self.width = 100 + padding
 		self.height = 50
-		self.rectangle = c.create_rectangle(x,y,x + self.width , y + self.height ,fill = "white",activefill='cyan')
+		self.rectangle = Component.canvas.create_rectangle(x,y,x + self.width , y + self.height ,fill = "white",activefill='cyan')
 		self.Selected = False
 		self.text = txt
-		self.txtObj = c.create_text(x + 45 + (padding /2), y + 20, font=("Purisa", 12), text = txt,fill = "blue")
+		self.txtObj = Component.canvas.create_text(x + 45 + (padding /2), y + 20, font=("Purisa", 12), text = txt,fill = "blue")
 		self.mX = 0
 		self.mY = 0
 		self.waitingToMove = False
 		self.toBeRemoved = False
+
+	@staticmethod
+	def initCanvas(c):
+		Component.canvas = c;
 
 	def getRectangle(self):
 		return self.rectangle
@@ -182,6 +185,7 @@ c = Canvas(gui, width=800 ,height=800)
 c.pack()
 c.create_rectangle(0,0,800,800, fill="black")
 c.create_image((500, 500), image = small_img)
+Component.initCanvas(c)
 
 selectedCs = []
 activeComponents = []
