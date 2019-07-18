@@ -9,7 +9,7 @@ class Component:
 	gID = 0
 	canvas = None
 
-	def __init__(self,x,y,txt,pid):
+	def __init__(self,x,y,txt,pid,lang):
 		padding = 0
 		if len(txt) > 8:
 			moreThan8 = len(txt) - 8
@@ -18,12 +18,16 @@ class Component:
 
 		self.cID = Component.gID
 		Component.gID += 1
+		if lang == "eng":
+			color = "white"
+		else:
+			color = "#ffffb3" #light yellow
 		self.pairID = pid
 		self.x = x
 		self.y = y
 		self.width = 100 + padding
 		self.height = 50
-		self.rectangle = Component.canvas.create_rectangle(x,y,x + self.width , y + self.height ,fill = "white",activefill='cyan')
+		self.rectangle = Component.canvas.create_rectangle(x,y,x + self.width , y + self.height ,fill = color,activefill='cyan')
 		self.Selected = False
 		self.text = txt
 		self.txtObj = Component.canvas.create_text(x + 45 + (padding /2), y + 20, font=("Purisa", 12), text = txt,fill = "blue")
@@ -233,7 +237,7 @@ def placeOnCanvas(preparePairs, maxOnScreen,first,last,numLeft):
 	x ,y = 500, 100
 	j = 0
 	for i in range(first,last):
-		activeComponents.append(Component(x,y,preparePairs[j].word, preparePairs[j].pairID))
+		activeComponents.append(Component(x,y,preparePairs[j].word, preparePairs[j].pairID,preparePairs[j].lang))
 		activeComponents[i].setMX(-1)
 		j += 1
 		y += 150

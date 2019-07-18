@@ -19,8 +19,8 @@ def getPairs():
 		#print("ID = \t", row[0], end = '') # print without new line
 		#print("\tSpanish Word = ", row[1], end = '')
 		#print("\tEnglish Word = ", row[2])
-		pairsToReturn.append(Word(row[1],row[0]))
-		pairsToReturn.append(Word(row[2],row[0]))
+		pairsToReturn.append(Word(row[1],row[0],"esp"))
+		pairsToReturn.append(Word(row[2],row[0],"eng"))
 
 	c.close()
 	return pairsToReturn
