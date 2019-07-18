@@ -28,16 +28,20 @@ if needsDecoding:
 
 	for row in rows:
 		word = row[0]
-		word.encode('latin1').decode('UNICODE')
+
 		if i == 3:
+			word = word.replace('Ã¡', '\xe1')
 			print(word)
-			#encode = word.encode()
-			people = [u'fa', u'Andr\xe9']
-			#word.decode("utf-8").encode("windows-1252").decode("utf-8")
+
+		"""	print(word)
+			word.encode("latin-1")
+			print(word)
+			people = [u'Addem\xe1s', u'Andr\xe9']
+			print(u'{0}'.format('AddemÃ¡s'))
 			#print(encode)
 			#decode = encode.decode()
 			print(people[0])
-			print(people[1])
+			print(people[1]) """
 
 		i += 1
 		#decode = word.decode('utf8')
