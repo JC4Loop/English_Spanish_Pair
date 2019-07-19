@@ -1,11 +1,11 @@
 import psycopg2
-# -*- coding: utf-8 -*-
+from NonEngConversion import*
 
 def getConnection():
 	conn = psycopg2.connect(database = "engEspDeuDb", user = "justin", password = "password", host = "127.0.0.1", port = "5432")
 	print(conn.encoding)
-	conn.set_client_encoding('UNICODE')
-	print(conn.encoding)
+	#conn.set_client_encoding('UNICODE')
+	#print(conn.encoding)
 	return conn
 
 needsDecoding = False
@@ -28,18 +28,16 @@ if needsDecoding:
 
 	for row in rows:
 		word = row[0]
-
-		if i == 3:
-			word = word.replace('Ã¡', '\xe1')
+		bNonEng = ContainsNonEngChars(word)
+		print(word,bNonEng)
+		if (bNonEng):
+			word = replaceWithLatin1Char(word)
 			print(word)
 
-		"""	print(word)
-			word.encode("latin-1")
-			print(word)
+
+'''
 			people = [u'Addem\xe1s', u'Andr\xe9']
-			print(u'{0}'.format('AddemÃ¡s'))
-			#print(encode)
-			#decode = encode.decode()
+
 			print(people[0])
 			print(people[1]) """
 
@@ -50,5 +48,6 @@ if needsDecoding:
 		#print(b)
 		#print("\tSpanish Word = ", row[1], end = '')
 		#print("\tEnglish Word = ", row[2])
+		'''
 		
-	c.close()
+c.close()
