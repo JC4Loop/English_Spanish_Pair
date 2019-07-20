@@ -1,6 +1,7 @@
 import psycopg2
 from Word import*
 from PairInput import *
+from NonEngConversion import*
 
 def getConnection():
 	conn = psycopg2.connect(database = "engEspDeuDb", user = "justin", password = "password", host = "127.0.0.1", port = "5432")
@@ -19,7 +20,8 @@ def getPairs():
 		#print("ID = \t", row[0], end = '') # print without new line
 		#print("\tSpanish Word = ", row[1], end = '')
 		#print("\tEnglish Word = ", row[2])
-		pairsToReturn.append(Word(row[1],row[0],"esp"))
+		espWord = replaceWithLatin1Char(row[1])
+		pairsToReturn.append(Word(espWord,row[0],"esp"))
 		pairsToReturn.append(Word(row[2],row[0],"eng"))
 
 	c.close()
