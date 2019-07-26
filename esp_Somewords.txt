@@ -87,7 +87,6 @@ Vivido :	Lived
 
 Venido :	(he/she) Come
 
-Verdadera :	True
 
 Visto :		(I) seen
 
@@ -95,7 +94,7 @@ Cocinado :	Cooked
 
 Hablado :	Spoken
 
-llevado	:	Taken
+//llevado	:	Taken
 
 Dejado	:	Left
 
