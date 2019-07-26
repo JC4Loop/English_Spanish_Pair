@@ -1,0 +1,101 @@
+createdb "engEspDeuDb";
+or
+CREATE DATABASE "engEspDeuDb"; // quotation marks to keep capitals
+
+CREATE TABLE spanish(id SERIAL,
+			word VARCHAR);
+
+CREATE TABLE english(id SERIAL,word VARCHAR);
+
+ALTER TABLE spanish ADD PRIMARY KEY(id);
+ALTER TABLE english ADD PRIMARY KEY(id);
+
+INSERT INTO spanish(word) VALUES ('tratar');
+INSERT INTO spanish(word) VALUES ('espejo');
+INSERT INTO spanish(word) VALUES ('pantalla');
+INSERT INTO spanish(word) VALUES ('pedido');
+INSERT INTO spanish(word) VALUES ('sentido');
+INSERT INTO spanish(word) VALUES ('llega');
+INSERT INTO spanish(word) VALUES ('llevar');
+INSERT INTO spanish(word) VALUES ('cierto');
+
+INSERT INTO spanish(word) VALUES ('salta');
+INSERT INTO spanish(word) VALUES ('sube');
+
+
+INSERT INTO english(word) VALUES ('to try');
+INSERT INTO english(word) VALUES ('mirror');
+INSERT INTO english(word) VALUES ('screen');
+INSERT INTO english(word) VALUES ('request');
+INSERT INTO english(word) VALUES ('sense');
+
+INSERT INTO english(word) VALUES ('arrives');
+INSERT INTO english(word) VALUES ('to carry');
+
+INSERT INTO english(word) VALUES ('jumps');
+INSERT INTO english(word) VALUES ('climbs');
+INSERT INTO english(word) VALUES ('true');
+
+CREATE TABLE pairEngEsp(id SERIAL PRIMARY KEY,
+			engId INTEGER REFERENCES english(id).
+			espId INTEGER REFERENCES spanish(id)
+			);
+
+ALTER TABLE pairEngEsp ADD timesCorrect integer default 0
+ALTER TABLE pairEngEsp ADD timesInCorrect integer default 0
+
+INSERT INTO pairEngEsp(engId,espId) VALUES (1,1);  // try tratar
+INSERT INTO pairEngEsp(engId,espId) VALUES (2,2);  // mirror espejo
+INSERT INTO pairEngEsp(engId,espId) VALUES (3,3);  // screen pantalla
+INSERT INTO pairEngEsp(engId,espId) VALUES (4,4);  // request pedido
+INSERT INTO pairEngEsp(engId,espId) VALUES (5,5);  // sense sentido
+INSERT INTO pairEngEsp(engId,espId) VALUES (6,6);  // arrives llega
+INSERT INTO pairEngEsp(engId,espId) VALUES (7,7); // to carry llevar
+INSERT INTO pairEngEsp(engId,espId) VALUES (8,9);  // jums salta
+INSERT INTO pairEngEsp(engId,espId) VALUES (9,10);  // climbs sube
+INSERT INTO pairEngEsp(engId,espId) VALUES (10,8); // true, cierto
+
+
+SELECT pairEngEsp.id, spanish.word, english.word, timesCorrect, timesincorrect
+FROM english
+INNER JOIN pairEngEsp ON english.id = pairEngEsp.engId
+INNER JOIN spanish ON pairEngEsp.espId = spanish.Id;
+
+SELECT pairEngEsp.id, spanish.word, pairEngEsp.espid, english.word, pairEngEsp.engId, timesCorrect, timesincorrect
+FROM english
+INNER JOIN pairEngEsp ON english.id = pairEngEsp.engId
+INNER JOIN spanish ON pairEngEsp.espId = spanish.Id;
+
+
+
+-------INSERT IF------
+INSERT INTO english (word) SELECT 'arrives' WHERE NOT EXISTS (SELECT id FROM english WHERE word = 'arrives';
+
+INSERT INTO pairengesp (engId,espId) SELECT 21,11 WHERE NOT EXISTS (SELECT id FROM pairengesp WHERE engId = 21 AND espId = 11);
+
+-------Delete------
+delete from english where id = 11;
+
+
+with S as (SELECT id FROM english WHERE word = 'Both'), I as (INSERT INTO english (word) SELECT 'Both' WHERE NOT EXISTS(SELECT id FROM english WHERE word='Both'))
+SELECT id FROM I
+UNION ALL
+SELECT id FROM S
+
+with S as (SELECT id FROM english WHERE word = 'Both'),
+I as (INSERT INTO english (word) SELECT 'Both'
+	WHERE NOT EXISTS(SELECT id FROM english WHERE word='Both') RETURNING id)
+SELECT id FROM I
+UNION ALL
+SELECT id FROM S
+
+-----------SHOW CONSTRAINTS-------------
+SELECT conname FROM pg_constraint;
+
+SELECT * FROM information_schema.table_constraints;
+
+-------DROP CONSTRAINT-----
+ALTER TABLE pairengesp DROP CONSTRAINT pairengesp_engid_fkey;
+
+
+

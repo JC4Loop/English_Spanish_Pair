@@ -184,9 +184,7 @@ while True:
 		frameCount += 1
 		gui.update_idletasks()
 		gui.update()
-		print('after gui.update()')
 		movementCalc(frameCount)
-		print('after movementCalc')
 	except:
 		print("Caught gui.update() error") # error only occurs on close
 		break
