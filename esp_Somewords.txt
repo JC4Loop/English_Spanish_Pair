@@ -1,4 +1,4 @@
-//Probadores - Fitting rooms
+﻿//Probadores - Fitting rooms
 Ambos :		Both
 
 Actuar :	Act
@@ -18,6 +18,8 @@ Compromiso :	Commitment
 //Cualquier :	
 
 Curso :		Course
+
+Deletrear :	Spell
 
 Desarrollado :	Developing
 
