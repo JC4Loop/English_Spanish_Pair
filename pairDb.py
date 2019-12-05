@@ -27,6 +27,33 @@ def getPairs():
 	c.close()
 	return pairsToReturn
 
+def getPairsByLetter(letter):
+	letLower = letter.lower()
+	#print("letter is ",letter)
+	pairsToReturn = []
+	c = getConnection()
+	cur = c.cursor()
+	selquery = "SELECT  pairEngEsp.id, spanish.word, english.word,pairEngEsp.timescorrect,pairEngEsp.timesincorrect FROM english INNER JOIN pairEngEsp ON english.id = pairEngEsp.engId INNER JOIN spanish ON pairEngEsp.espId = spanish.Id WHERE lower(spanish.word) SIMILAR TO (%s) OR upper(spanish.word) SIMILAR TO (%s) ORDER BY timescorrect"
+			   #SELECT  pairEngEsp.id, spanish.word, english.word,pairEngEsp.timescorrect,pairEngEsp.timesincorrect FROM english INNER JOIN pairEngEsp ON english.id = pairEngEsp.engId INNER JOIN spanish ON pairEngEsp.espId = spanish.Id WHERE lower(spanish.word) SIMILAR TO 'l%' ORDER BY timescorrect;
+	
+
+	letLower = letLower + "%"
+	letter = letter + "%"
+	#args = "(" + letLower + "|" + letter + ")%"
+	#args = "(" + letter + "|" + letLower + ")%"
+	cur.execute(selquery,(letLower,letter))
+	rows = cur.fetchall()
+	for row in rows:
+		#print("ID = \t", row[0], end = '') # print without new line
+		#print("\tSpanish Word = ", row[1], end = '')
+		#print("\tEnglish Word = ", row[2])
+		espWord = replaceWithLatin1Char(row[1])
+		pairsToReturn.append(Word(espWord,row[0],"esp"))
+		pairsToReturn.append(Word(row[2],row[0],"eng"))
+
+	c.close()
+	return pairsToReturn
+
 
 
 def incrementTimesCorrect(pairID):
@@ -113,5 +140,16 @@ def savePairToDb(pair):
 	finally:
 		return count
 
-
+# WHERE lower(title) SIMILAR TO '(a|k|t)%'
 #INSERT INTO english (word) SELECT 'arrives' WHERE NOT EXISTS (SELECT id FROM english WHERE word = 'arrives';
+
+'''
+---Only spanish words starting with ? letter
+
+SELECT pairEngEsp.id,spanish.word,english.word,pairEngEsp.timescorrect,pairEngEsp.timesincorrect FROM english INNER JOIN pairEngEsp ON english.id = pairEngEsp.engId INNER JOIN spanish ON pairEngEsp.espId = spanish.Id WHERE lower(spanish.word) SIMILAR TO 'l%'
+
+---Same as above but order by timescorrect
+SELECT pairEngEsp.id,spanish.word,english.word,pairEngEsp.timescorrect,pairEngEsp.timesincorrect FROM english INNER JOIN pairEngEsp ON english.id = pairEngEsp.engId INNER JOIN spanish ON pairEngEsp.espId = spanish.Id WHERE lower(spanish.word) SIMILAR TO 'l%' ORDER BY timescorrect;
+
+
+'''

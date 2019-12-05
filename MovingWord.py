@@ -98,4 +98,4 @@ class MovingWord:
 	
 		return bCollision
 
-#---------------------------------------------------END of Component Class
+#---------------------------------------------------END of MovingWord Class

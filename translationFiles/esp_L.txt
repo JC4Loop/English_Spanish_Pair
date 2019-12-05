@@ -1,0 +1,65 @@
+lago		:	lake
+
+lágrima		:	tear
+
+lágrimas	:	tears
+
+lampara		:	lamp
+
+larga		:	long
+
+lavaplatos	:	sink
+
+lenguaje	:	language
+
+lenguages	:	languages
+
+limón		:	lemon
+
+limpiar		:	to clean
+
+en línea	:	on-line
+
+lista		:	list
+
+llamada		:	calls
+
+llamará		:	he/she will call
+
+llamaré		:	I will call
+
+llamaste	:	you called
+
+las llaves	:	the keys
+
+llegar		:	to arrive
+
+llegará		:	he/she/it will arrive
+
+llegaremos	:	we will arrive
+
+llegaste	:	you arrived
+
+llegué		:	I arrived
+
+llenamos	:	we fill
+
+llenar		:	to fill
+
+llené		:	I filled
+
+llover		:	to rain
+
+lloverá		:	will rain
+
+llovia		:	was raining
+
+llegó		:	arrived
+
+llamó		:	he/she called
+
+llueve		:	it rains
+
+lluvia		:	rain
+
+las luces	:	the lights

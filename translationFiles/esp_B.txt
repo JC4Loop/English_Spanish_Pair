@@ -1,0 +1,97 @@
+// Spanish words beginning with 'b'
+
+baja		:	short / low
+
+bajamos		:	(we are) getting off
+
+bajarte		:	(you) got off
+
+bajo		:	(I) get off
+
+Banco		:	Bank
+
+Bańo		:	Bathroom
+
+Basura		:	rubbish / garbage
+
+//beba		:	drink (command)
+
+bebe		:	drinks
+
+bebé		:	baby
+
+bebemos		:	(we) drink
+
+beben		:	(they) drink
+
+beber		:	to drink
+
+beberia		:
+
+beberías	:	(you) would drink
+
+bebí		:	(I) drank
+
+//bebía		:	(I) was drinking
+
+//bebíais
+
+//bebíamos	:	(we) drink
+
+bebiendo	:	drinking
+
+bebieron	:	(they) drank
+
+bebimos		:	(we) drank
+
+belleza		:	beauty
+
+beneficio	:	benefit
+
+besa		:	kisses (verb)
+
+beso		:	(a) kiss
+
+Bicicletas	:	Bicycles
+
+bienestar	:	well being
+
+blanca		:	white
+
+Blusa		:	Blouse
+
+//bola		:	ball
+
+Boletos		:	Tickets
+
+Bolsa		:	Bag
+
+Bolsillos	:	Pockets
+
+bonita		:	pretty
+
+borradores	:	erazers
+
+Bosque		:	Forest
+
+Botas		:	Boots
+
+Botellas	:	Bottles
+
+Brazo		:	Arm
+
+Bufunda		:	Scarf
+
+Búho		:	Owl
+
+Burros		:	Donkeys
+
+buscan		:	(they) look for
+
+buscar		:	(to) look for
+
+buscas		:	(you) look for
+
+busco		:	(I) look for
+
+La búsqueda	:	The search

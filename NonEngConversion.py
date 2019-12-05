@@ -28,9 +28,3 @@ def replaceWithLatin1Char(string):
 		#ú
 		string = string.replace('Ãº', '\xfa')
 	return string
-	'''
-	return {
-        'a': 1,
-        'b': 2,
-    }[x]
-    '''

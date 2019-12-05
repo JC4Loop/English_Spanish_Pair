@@ -1,0 +1,260 @@
+// Spanish words beginning with 'a'
+
+a menudo	:	often
+
+abajo		:	bottom / below / down
+
+abierta		:	open
+
+abogado		:	lawyer
+
+abraza		:	(he/she) hugs
+
+abrazan		:	(they) hug
+
+abrazaron	:	(they) hugged
+
+Abrigo		:	Coat
+
+Abril		:	April
+
+abuelos		:	grandparents
+
+aburrido	:	boring
+
+acá		:	here (less specific)
+
+acampando	:	camping
+
+aceptar		:	to accept
+
+acepto		:	I accept
+
+acerca		:	about / in regards
+
+acompańaran	:	(they will) accompany
+
+acompańaremos	:	(we will) accompany
+
+acostado	:	lying down
+
+acostamos	:	(we) lay down
+
+acostar		:	(to) go to bed / lay down
+
+acostó		:	(he/she) lay down
+
+la actitud	:	the attitude
+
+actuación	:	performance
+
+actualmente	:	currently
+
+actuar		:	Act
+
+acuerdo		:	agreement
+
+acuesta		:	(he/she) lies down
+
+acuestan	:	(they) lay down
+
+acuesto		:	(I) lay down
+
+adecuado	:	adequate / appropriate
+
+adelante	:	forward / ahead
+
+además		:	besides / anyway
+
+adentro		:	inside
+
+adivinar	:	(to) guess
+
+adivinaré	:	I will guess
+
+adivinaremos	:	we will guess
+
+administración	:	administration
+
+adolescente	:	teenager
+
+agente		:	agent
+
+agradable	:	pleasant / kind
+
+agrega		:	add / aggregate
+
+agregué		:	I added / (aggregated)
+
+Aguacate	:	Avocado
+
+ahí		:	there
+
+Aire		:	Air
+
+Ajo		:	Garlic
+
+alcalde		:	mayor (m)
+
+alcaldesa	:	mayor (f)
+
+alcanzado	:	reached / caught up
+
+alcanzar	:	(to) reach
+
+aldea		:	village
+
+alegría		:	joy
+
+Alemán		:	German
+
+Alemania	:	Germany
+
+algo		:	something
+
+alguien		:	someone
+
+alguna		:	any
+
+alimentar	:	(to) feed
+
+alimentó	:	fed
+
+el alma		:	the soul
+
+Almohada	:	Pillow
+
+almuerzo	:	lunch
+
+alquilando	:	renting
+
+alquilar	:	(to) rent
+
+alternativa	:	alternative
+
+alto		:	tall / high
+
+la amistad	:	the friendship
+
+amaban		:	(they use to) loved
+
+amable		:	kind / nice
+
+aman		:	(they) love
+
+Amanecer	:	Dawn
+
+amar		:	to love
+
+amarillo	:	yellow
+
+ambos		:	both
+
+amé		:	I loved
+
+amor		:	love
+
+amplio		:	wide
+
+//ańadis		:	add (add on)
+
+análisis	:	analysis
+
+anduve		:	(I) walked / moved
+
+anduvo		:	(he/she) walked / moved
+
+ángel		:	angel
+
+ángeles		:	angels
+
+anoche		:	last night
+
+antes		:	before
+
+//apagábamos	:	we turned off
+
+apagar		:	(to) turn off
+
+aparecer	:	appear
+
+aplica		:	applies
+
+aprender	:	(to) learn
+
+apura		:	hurry
+
+aquí		:	here
+
+//ararán	:	grill
+
+árbol		:	tree
+
+archivos	:	files
+
+área		:	area
+
+argumento	:	argument
+
+Armario		:	Closet
+
+arriba		:	upstairs
+
+artículo	:	article
+
+asa		:	grill (verb)
+
+asando		:	grilling
+
+asarán		:	(they) will grill
+
+asarás		:	You will grill
+
+asaré		:	(I) will grill
+
+asaron		:	(they) grilled
+
+asé		:	(I) grilled
+
+asignaturas	:	subjects
+
+asume		:	he/she assumes
+
+asumir		:	to assume
+
+asumo		:	I assume
+
+ataque		:	attack
+
+Atardecer	:	Sunset
+
+atmósfera	:	atmosphere
+
+atrás		:	back / behind
+
+atún		:	tuna
+
+Aula		:	Classroom
+
+aumentar	:	to increase
+
+aún		:	still / yet
+
+aunque		:	even though
+
+Autor		:	Author
+
+aventura	:	adventure
+
+avenida		:	avenue
+
+Avion		:	Plane
+
+aviso		:	notice
+
+ayer		:	yesterday
+
+ayudas		:	(you) help
+
+ayudo		:	(I) help
+

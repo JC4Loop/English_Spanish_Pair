@@ -1,55 +1,15 @@
-﻿//Probadores - Fitting rooms
-Ambos :		Both
 
-Actuar :	Act
+colocar :	to place
 
-Addemás	:	besides (Anyway)
+cualquier :	any
 
-Alimentar :	(to) feed
-
-Alimentó :	Fed
-
-Amanecer :	Dawn
-
-Atardecer :	Dusk
-
-Boletos :	Tickets
-
-Burros :	Donkeys
-
-Botellas :	Bottles
-
-Buscas	:	Looking for
-
-Cabras :	Goats
-
-Cargo :		In charge / position
-
-Cierto :	True
-
-Colocar :	place
-
-Compromiso :	Commitment
-
-Cosecha : 	Harvest (Gather food)
-
-//Cualquier :	
-
-Cria :		(he / she) raise / breed
-
-Crían :		(they) raise / breed
-
-Cultiva :	Grows / Farms
-
-Curso :		Course
-
-Deletrear :	Spell
+deletrear :	to Spell
 
 Desarrollado :	Developing
 
-//Elaborado :	
+elaborado :	elaborate
 
-Esfuerzos :	Efforts
+esfuerzos :	efforts
 
 Éxito :		Success
 
@@ -57,23 +17,7 @@ Explicar :	Explain
 
 Fracasco :	failure
 
-Iban :		were going
-
-Parejas	:	Couples
-
-Pedido : 	Asked
-
-Probar	:	try out
-
-Profundo :	Steep / Deep
-
-Propuesta :	Proposal
-
-Prueba : 	test
-
-Puesto : 	Put
-
-Puestos : 	positions / places
+Iban :		they were going
 
 Secilla :	Simple / Plain / Straightforward
 
@@ -82,18 +26,6 @@ Quizás :	Perhaps
 Iniciar :	Start
 
 Inundación :	Flood
-
-Llegar :	(to) Arrive
-
-Llega	:	Arrives
-
-llegado	:	Arrived
-
-llevar :	Carry
-
-llevó :		Carried
-
-llevado :	Worn
 
 Recursos :	Resourcess
 
@@ -129,15 +61,13 @@ Cocinado :	Cooked
 
 Hablado :	Spoken
 
-//llevado	:	Taken
-
 Dejado	:	Left
 
 //Él jamás había sentido esto por nadie	:	He had never felt this for anyone
-// engid 26 true verdadera 	Error in saveToDb duplicate key value violates unique constraint "pairengesp_engid_key" DETAIL:  Key (engid)=(26) already exists.
 
-// engid 60 taken llevado	Error in saveToDb duplicate key value violates unique constraint "pairengesp_engid_key" DETAIL:  Key (engid)=(60) already exists.
 //No voy a ninguna parte	:	 I am not going anywhere
 
 //tratar ? intentar
+
+//llevado	:	Taken
 
