@@ -1,0 +1,289 @@
+//Spanish words beginning with P
+
+pagaré		:	(I) will pay
+
+pagué		:	(I) paid
+
+Pais		:	Country
+
+Pajaros		:	Birds
+
+pálido		:	pale
+
+//El Panorama	:	The View
+
+Papas		:	Potatoes
+
+Paquete		:	Package
+
+par		:	pair
+
+El Paraguas	:	the umbrella
+
+parará		:	(he/she) will stop
+
+páraras		:	(you) will stop
+
+pararé		:	(I) will stop
+
+paramos		:	(we) stop
+
+pararemos	:	(we) will stop
+
+pared		:	wall
+
+Parejas		:	Couples
+
+pares		:	pairs (plural pair)
+
+//parlante	:	speaker
+
+paró		:	(he/she) stopped
+
+La Parilla	:	The Grill
+
+//pasado		:	happened
+
+pasar		:	(to) pass / spend time
+
+pasas		:	(you) pass / spend time
+
+pásamelo	:	pass it to me
+
+pasar		:	(to) happen
+
+pasando		:	happening
+
+Pastel		:	Cake
+
+patada		:	kick
+
+La Paz		:	The Peace
+
+Película	:	Movie
+
+pedí		:	(I) ordered
+
+pedír		:	(to) order / request
+
+//pedido		: 	asked
+
+//pedimos		:	we ordered / asked
+
+//pedió		:	(he/she) will order
+
+pediré		:	(I) will order / ask
+
+pediste		:	(you) ordered / asked
+
+pena		:	shame
+
+pensamos	:	(we) thought (about)
+
+pensando	:	thinking
+
+pensarán	:	(they) will think (about)
+
+pensaremos	:	(we) will think (about)
+
+pensaron	:	(they) thought
+
+pensaste	:	(you) thought
+
+pensé		:	(I) thought (about)
+
+pensó		:	(he/she) thought (about)
+
+Pera		:	Pear
+
+perderé		:	(I) will lose / miss
+
+perdemos	:	(we) lose
+
+perderemos	:	(we) will lose / miss
+
+perdí		:	(I) lost / missed
+
+la pérdida	:	the loss
+
+perdió		:	(he/she) lost / missed
+
+perezoso	:	lazy
+
+perfil		:	profile
+
+permiso		:	permission
+
+permitido	:	(have) allowed
+
+permitir	:	to allow
+
+El Periodista	:	The Journalist
+
+pertenence	:	belong
+
+pertenezco	:	(I) belong
+
+pesar		:	(to) weigh
+
+La Petición	:	The Petition
+
+picar		:	(to) itch
+
+La picazón	:	The Itch
+
+pide		:	(he/she) requests / asks
+
+pidieron	:	(they) ordered / requested
+
+La piel		:	The Skin
+
+piensa		:	(he/she) thinks
+
+pienso		:	(I) think (about)
+
+pierden		:	(they) lose
+
+pierdes		:	(you) lose
+
+Pies		:	Feet
+
+pintar		:	(to) paint
+
+Piscina		:	Pool
+
+La Pista	:	The Clue
+
+Pizarra		:	Chalkboard
+
+Plato		:	Dish / Plate
+
+//podía		:	(he/she) was able to
+
+//podian		:	(they) were able to
+
+podrá		:	(he/she) will be able to
+
+podrán		:	(they) will be able to
+
+podrás		:	(you) will be able to
+
+podré		:	(I) will be able to
+
+pon		:	put (command)
+
+pone		:	he/she puts
+
+ponemos		:	(we) put / put on
+
+pondré		:	I will put
+
+pondrá		:	he/she will put
+
+pondrás		:	you will put
+
+//ponerme		:	put on me
+
+//ponerse		:	put on (on him/herself)
+
+pones		:	you put
+
+//pongo		:	I put on / i am putting
+
+//pongra		:	put
+
+porcentaje	:	percentage
+
+posee		:	owns
+
+La posibilidad	:	the possibility
+
+posiblemente	:	Possibly
+
+Postal		:	Postcard
+
+Postre		:	Dessert
+
+precios		:	prices
+
+//preguntáis	:	(you) ask
+
+La prensa		:	The Press
+
+la presión	:	the pressure
+
+pedir prestado	:	borrow
+
+La presencia	:	the presence
+
+prestaste	:	(you) lent
+
+presté		:	(I) lent
+
+prestó		:	(he/she) lent
+
+primero		:	first
+
+Primo		:	Cousin
+
+probable	:	likely
+
+probador	:	fitting room
+
+//probar		:	(to) try / test
+
+//probarse	:	to try on h
+
+//probarte	:	you try on
+
+la produccion	:	the production
+
+profundo	:	deep / steep
+
+El Programa	:	The Program
+
+pronto		:	soon
+
+propiedad	:	property
+
+propina		:	tip
+
+la propuesta	:	the proposal
+
+proteína	:	protein
+
+próxima		:	next
+
+Proyecto	:	Project
+
+//prueba		:	test
+
+publicidad	:	publicidad / advertising
+
+pude		:	(I) was able
+
+pudieron	:	(they) were able
+
+pudimos		:	(we) were able
+
+pudo		:	(he/she) was able
+
+Pueblo		:	Town
+
+Puerta		:	Door
+
+//puesta		:	is wearing
+
+//puesto		:	put
+
+//puestos		: 	positions / places
+
+puse		:	(I) put (past)
+
+pusieron	:	(they) put (past)
+
+pusimos		:	(we) put (past)
+
+puso		:	(he/she) put (past)
+
+

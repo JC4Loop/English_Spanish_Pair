@@ -1,0 +1,232 @@
+
+Caballos	:	Horses
+
+cabe		:	fits
+
+Cabello		:	Hair
+
+Cabras		:	Goats
+
+cada		:	each
+
+Cadáver		:	Corpse
+
+Cadena		:	Chain
+
+Cama		:	Bed
+
+Camarero	:	Waiter
+
+// cambié		:	(I) changed
+
+Cajón		:	Drawer
+
+caliente	:	hot
+
+//calor		:
+
+capaz		:	capable
+
+Cara		:	Face
+
+cambio		:	change
+
+camisa		:	shirt
+
+campo		:	countryside / field
+
+cancelación	:	cancellation
+
+cansado		:	tired
+
+cantabas	:	(you) were singing
+
+cargo		:	in charge / position
+
+Carne		:	Meat
+
+Carrera		:	Race
+
+Carta		:	Letter
+
+Cartera		:	Purse / Wallet
+
+Casa		:	House / Home
+
+Castillo	:	Castle
+
+Celular		:	Mobile phone
+
+cepillamos	:	(we) brush
+
+cepillas	:	(you) brush
+
+los cepillos	:	the brushes
+
+césped		:	grass (lawn)
+
+Chaqueta	:	Jacket
+
+Chorizos	:	Sausages
+
+cien		:	hundred
+
+cierto		:	true
+
+cifra		:	number / figure
+
+cinturón	:	belt
+
+circulación	:	circulation
+
+cita		:	appointment / date
+
+claramente	:	clearly
+
+clic		:	click
+
+cocinado	:	(had) cooked
+
+cocinando	:	cooking
+
+cocinarán	:	(they) will cook
+
+cocinaré	:	(I) will cook
+
+cocinaremos	:	(we) will cook
+
+cocinaron	:	(they) cooked
+
+cocine		:	(I) cooked
+
+cocinó		:	(he/she) cooked
+
+codo		:	elbow
+
+collectionaba	:	used to collect
+
+//colocar		:	to place
+
+compartí	:	(I) shared
+
+compartió	:	(he/she) shared
+
+compartirá	:	(he/she) will share
+
+compartiré	:	(I) will share
+
+compras		:	(you) are buying
+
+comentarios	:	comments
+
+//comenze		:	(I) started
+
+//comenzó		:	started
+
+comerá		:	(he/she) will eat
+
+comerán		:	(they) will eat
+
+comerás		:	(you) will eat
+
+comercio	:	trade
+
+competencia	:	competition
+
+compromiso	:	commitment
+
+condición	:	condition
+
+conduciendo	:	driving
+
+condució	:	(he/she) drove
+
+conducir	:	(to) drive
+
+conduciremos	:	(we) will drive
+
+conduje		:	(I) drove
+
+condujeron	:	(they) drove
+
+//condujo		:	he / she drove
+
+condujimos	:	(we) drove
+
+conmigo		:	with me
+
+conoci		:	(I) met
+
+conocimos	:	(we) met
+
+conocimiento	:	knowledge
+
+conociste	:	(you) met
+
+conseguir	:	to get / obtain
+
+construyes	:	(you) build
+
+//contó		:	let
+
+contrato	:	contract
+
+//conversaré	:	(I will) talk
+
+Copa		:	Cup
+
+correcto	:	correct
+
+Corredor	:	Runner
+
+correr		:	to run
+
+cortáis		:	you cut
+
+Cortinas	:	Curtains
+
+cosecha		:	harvest (gather food)
+
+cosa		:	thing
+
+crees		:	(you) believe / think
+
+//creéis		:	do you believe
+
+cría		:	(he/she) raise / breed
+
+crían		:	(they) raise / breed
+
+la Cruz		:	the Cross
+
+cruzar		:	to cross
+
+//cualquier	:	any
+	
+cualquiera	:	anything
+
+cuantos		:	how many
+
+Cuaderno	:	Notebook
+
+cubre		:	covers
+
+cubrió		:	covered
+
+Cucharas	:	Spoons
+
+Cuénta		:	Bill
+
+Cuero		:	Leather
+
+cuesta		:	cost
+
+//cuidar		:	(to) take care
+
+//cuido			:	(I) take care
+
+culpa		:	blame / fault / guilt
+
+cultiva		:	grows / farms
+
+Curso		:	Course

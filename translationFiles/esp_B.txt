@@ -12,6 +12,8 @@ Banco		:	Bank
 
 Bańo		:	Bathroom
 
+barco		:	boat
+
 Basura		:	rubbish / garbage
 
 //beba		:	drink (command)

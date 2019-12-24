@@ -80,13 +80,13 @@ Label(window, text="Language").grid(row=0,column=0,columnspan = 2)
 
 textOutput = Text(window, height = 20, width = 100,bg="black",fg="#99ff33", font=("Courier", 16))
 textOutput.grid(row=2,column=0,columnspan = 4)
-btnSpn = Button(window, text='Spanish', command = lambda: loadFile("spanish"))
+btnSpn = Button(window, text='Spanish', command = lambda: loadFile("Others"))
 btnSpn.grid(row=3, column=0,sticky=W,pady=4)
 
 pairsFromFile = []
 
 #choices = [ 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z' ]
-choices = ['A','B','C','L','P']
+choices = ['A','B','C','H','L','P','Q']
 ddVar = StringVar(window)
 ddVar.set("Select letter") # initial value
 ddAz = OptionMenu(window, ddVar, *choices)

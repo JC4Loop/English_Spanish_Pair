@@ -36,6 +36,10 @@ acompańaran	:	(they will) accompany
 
 acompańaremos	:	(we will) accompany
 
+// acordarme
+
+//acordé	:	(I) remembered
+
 acostado	:	lying down
 
 acostamos	:	(we) lay down
@@ -176,11 +180,15 @@ antes		:	before
 
 apagar		:	(to) turn off
 
+apagado		:	off
+
 aparecer	:	appear
 
 aplica		:	applies
 
 aprender	:	(to) learn
+
+aprendiste	:	(you) learned
 
 apura		:	hurry
 
@@ -200,7 +208,9 @@ Armario		:	Closet
 
 arriba		:	upstairs
 
-artículo	:	article
+Artículo	:	Article
+
+Artista		:	Artist
 
 asa		:	grill (verb)
 

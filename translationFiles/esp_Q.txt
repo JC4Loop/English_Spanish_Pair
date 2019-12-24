@@ -1,0 +1,107 @@
+//Spanish words beginning with q
+
+queda		:	keeps / stays
+
+//quedaba
+
+quedado		:	(had) stayed
+
+quedamos	:	(we) stay
+
+//quedar		:	(to) stay
+
+quedará		:	(he/she) will stay
+
+quedarás	:	(you) will stay
+
+quedaré		:	(I) will stay
+
+quedaremos	:	(we) will stay
+
+quedaron	:	(they) stayed
+
+//quedarnos	:	we stay
+
+quedaste	:	(you) stayed
+
+quedé		:	(I) stayed
+
+queremos	:	(we) want
+
+quedo		:	(I) stay
+
+quedó		:	(he/she) stayed / kept
+
+//quería		:	(I) wanted
+
+queria		:	(he/she) wanted
+
+//queríais	:	(you) wanted
+
+queríamos	:	(we) wanted
+
+querian		:	(they) wanted
+
+querias		:	(you) wanted
+
+querido		:	(had) wanted
+
+querré		:	(I will)      want
+
+querrá		:	(he/she will) want
+
+querrán		:	(they will)   want
+
+querrás		:	(you will)    want
+
+querremos	:	(we will)     want
+
+querría		:	(I/he/she) would want
+
+querríamos	:	(we) would want
+
+querrían	:	(they) would want
+
+quien		:	who
+
+//quieras	:	(you) want to
+	
+quiere		:	(he/she) wants
+
+quieren		:	(they) want
+
+quieres		:	(you) want
+
+quiero		:	(I) want
+
+Química		:	Chemistry
+
+quise		:	(I) wanted
+
+//quisiste	:	(you)    wanted
+
+//quisimos	:	(we)     wanted
+
+//quisieron	:	(they)   wanted		// preterite vs imperfect
+
+//quiso		:	(he/she) wanted
+
+//quisiera	:	(I) would like
+
+//quisiera	:	(he/she) would like
+
+//quisieran	:	(they) wanted
+
+//quisieron	:
+
+//quiso		:	(he/she) wanted
+
+quitan		:	(they) take off
+
+quitando	:	taking off
+
+//quitarse	:	(him/herself) take off
+
+quito		:	(I) take off
+
+quizá		:	maybe

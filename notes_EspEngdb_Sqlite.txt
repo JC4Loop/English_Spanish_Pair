@@ -1,0 +1,19 @@
+#	sqlite datebase for EspEngPair
+
+#-- CREATE DATABASE---
+sqlite3 EspEng.db
+
+#---CREATE TABLES---
+CREATE TABLE spanish( id INTEGER PRIMARY KEY AUTOINCREMENT, word VARCHAR(30) NOT NULL UNIQUE);
+
+CREATE TABLE english( id INTEGER PRIMARY KEY AUTOINCREMENT, word VARCHAR(30) NOT NULL UNIQUE);
+
+CREATE TABLE pairTable(	espId INTEGER NOT NULL,engId INTEGER NOT NULL,FOREIGN KEY (espId) REFERENCES spanish (id) ON DELETE SET NULL, FOREIGN KEY (engId) REFERENCES english (id) ON DELETE SET NULL, PRIMARY KEY (espId,engId));
+
+INSERT INTO spanish (word) VALUES ('Espejo');
+INSERT INTO english (word) VALUES ('Mirror');
+
+INSERT INTO pairTable(espId,engId) VALUES (1,1);
+
+SELECT spanish.Id AS SpaId ,english.Id AS EngID, english.word AS English, spanish.word AS Spanish FROM english INNER JOIN pairTable ON pairTable.engId = english.id INNER JOIN spanish ON spanish.Id = pairTable.espId;
+

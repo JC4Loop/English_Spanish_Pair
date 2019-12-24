@@ -1,0 +1,377 @@
+
+
+//danza		:	dance dancing
+
+debajo		:	under / below
+
+deberias	:	(you) should
+
+//Dejado		:	Left
+
+dejará		:	(he/she) will leave (place obj)
+
+dejé		:	(I) left (place obj)
+
+dejó		:	(he/she) left (place obj)
+
+deletrear	:	(to) spell
+
+delgado		:	thin
+
+desafortunadamente	:	unfortunately
+
+desarrollando	:	developing
+
+descansaron	:	(they) rested
+
+descanso	:	break / rest
+
+descansó	:	(he/she) rested
+
+descubrir	:	(to) discover
+
+después		:	after
+
+dibujando	:	drawing (vrb)
+
+dibujar		:	(to) draw
+
+dibujo		:	(the) drawing	
+
+dijeron		:	(they) said
+
+dijo		:	(he/she) said
+
+divertido	:	fun
+
+dormitorio	:	bedroom
+
+doy		:	(I) give
+
+eficaz		:	effective
+
+eligiendo	:	choosing
+
+//escojo		:	(I am) choosing
+
+//escogerás	:	(you will) choose
+
+efectivo	:	cash
+
+ejericio	:	exercise
+
+elaborar	:	(to) elaborate
+
+elegí		:	(I) chose
+
+elegirás	:	(you) will choose
+
+empezamos	:	(we) start
+
+//empezan		:	(they) start
+
+empezaron	:	(they) started
+
+empiezan	:	(they) start
+
+encendí		:	(I) turned on
+
+encendido	:	on
+
+encendió	:	(he/she) turned on
+
+entendemos	:	(we) understand
+
+entender	:	(to) understand
+
+entiende	:	(he/she) understands
+
+entienden	:	(they) understand
+
+entiendo	:	(I) understand
+
+enviar		:	(to) send
+
+escenario	:	stage
+
+escribieron	:	(they) wrote
+
+esfuerzos	:	efforts
+
+espalda		:	back (body part)
+
+Especáculos	:	Shows (entertainment)
+
+esperé		:	(I) waited
+
+estante		:	shelf
+
+estanterías	:	shelves
+
+estilo		:	style
+
+estuve		:	I was
+
+estuviste	:	you was
+
+excursiones	:	excursions
+
+éxito		:	success
+
+explicar	:	explain
+
+Fracasco	:	failure
+
+fresco		:	fresh
+
+Frijoles	:	Beans
+
+Flautas		:	Flutes
+
+fumar		:	(to) smoke
+
+gastaba		:	spent (money)
+
+gastamos	:	(we) spent (money)
+
+Gimnasio	:	Gym
+
+gorras		:	caps
+
+guapo		:	good-looking
+
+gustaría	:	would like
+
+gustó		:	(he/she) liked
+
+ibamos		:	(we) used to go
+
+Iban		:	(they) were going
+
+Iglesia		:	Church
+
+La Informacion	:	The Information
+
+Iniciar		:	Start / Initiate
+
+intentabamos	:	(we were) trying
+
+intentaban	:	(they were) trying
+
+intentabas	:	(you were) trying
+
+Inundación	:	Flood
+
+invité		:	(I) invited
+
+marron		:	brown
+
+miraron		:	(they) watched
+
+miré		:	(I saw)
+
+miró		:	(he/she) watched
+
+mochila		:	backpack
+
+montamos	:	(we) ride
+
+montas		:	(you) ride
+
+morena		:	brunette
+
+motor		:	engine
+
+múneca		:	doll
+
+nadar		:	(to) swim
+
+nadé		:	(I) swam
+
+nadaron		:	(they) swam
+
+nadaste		:	(you) swam
+
+Navidad		:	Christmas
+
+//nevera		:	refrigerator
+
+Nieve		:	Snow
+
+Nochebuena	:	Christmas Eve
+
+oimos		:	(we) hear
+
+olvidas		:	(you) forget
+
+olvidamos	:	(we) forget / forgot
+
+olvidé		:	(I) forgot
+
+olivdaste	:	(you) forgot
+
+olvido		:	(I) forget
+
+Orejas		:	Ears
+
+Ovejas		:	Sheep
+
+//oye
+
+oyen		:	(they) hear
+
+oyes		:	(you) hear
+
+recibir		:	(to) receive
+
+recibiste	:	(you) received
+
+recordó		:	(he/she) remembered
+
+recuerdas	:	(you) remember
+
+Recursos	:	Resources
+
+Refresco	:	Soda
+
+Refrigerador	:	Fridge
+
+regando		:	watering
+
+regar		:	(to) water
+
+//Reúnen		:	(they) meet
+
+
+reparó		:	(he/she) repaired
+
+reúnen		:	(they) meet
+
+revistas	:	magazines
+
+rezaba		:	(was) praying
+
+rezaban		:	(they were) praying
+
+rezabas		:	(you were) praying
+
+riega		:	waters (verb)
+
+río		:	river
+
+rompieron	:	(they) broke
+
+rompí		:	(I) broke
+
+rompió		:	(he/she) broke
+
+rompiste	:	(you) broke
+
+Ropa		:	Clothes
+
+rubio		:	blonde
+
+sale		:	(he/she) leaves
+
+salen		:	(they) leave
+
+sales		:	(you) leave
+
+salgo		:	(I) leave
+
+salir		:	(to) leave
+
+salieron	:	(they) left
+
+salieron	:	(they) left / went out
+
+salió 		:	(he/she) went out
+
+Salón		:	Hall
+
+salta		:	jumps
+
+Salud		:	Health
+
+secilla		:	simple
+
+secilla		:	straightforward
+
+sed		:	thirst
+
+semanal		:	weekly
+
+//sentarse	:	(you) to sit down
+
+sentido		:	(had) felt
+
+sentimos	:	(we) feel
+
+Sequía		:	Drought
+
+//simpático	:	nice
+
+Sombra		:	Shadow
+
+sintió		:	(he/she) felt
+
+sonar		:	(to) dream
+
+//sortija		:	ring
+
+sube		:	climbs
+
+talla		:	size
+
+talla		:	height
+
+tamańo		:	size
+
+//tazones		:	mugs
+
+Tenedor		:	Fork
+
+tenido		:	(had) had
+
+Tienda		:	Store
+
+tomado		:	taken
+
+traer		:	(to) bring
+
+trajeron	:	(they) brought
+
+trajo		:	(he/she) brought
+
+//tuve		:	(I) had
+
+//tuvieron	:	(they) had
+
+usaste		:	(you) used
+
+usualmente	:	usually
+
+vacío		:	empty
+
+Vaqueros	:	Jeans
+
+vivido		:	(had) lived
+
+Venido		:	(he/she) Come
+
+venimos		:	(had) come
+
+verdadero	:	true
+
+verán		:	(they) will see
+
+Vestíbulo	:	Lobby
+
+viajar		:	(to) travel
+
+viajaron	:	(they) traveled
+
+viejo		:	old
+
+Visto		:	(had) seen
+

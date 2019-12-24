@@ -1,0 +1,117 @@
+// spanish words beginning with H
+
+ha		:		(he/she/it) has
+
+había		:		there was / were / had
+
+//habían		:		they had
+
+habíamos	:		(we) had
+
+habías		:		(you) had
+
+habitaciones	:		rooms
+
+hablabaís	:		(you) used to talk
+
+hablado		:		spoken
+
+hablando	:		talking
+
+hablar		:		(to_ talk / speak
+
+hablaste	:		(you) spoke
+
+habló		:		spoke
+
+habrá		:		there will be
+
+habrán		:		(they) will have
+
+habrás		:		(you) will have
+
+habré		:		(I) will have
+
+habremos	:		(we) will have
+
+//habría		:		he/she would have / she had
+
+habríamos	:		(we) would have
+
+habrían		:		(they) would have
+
+habrías		:		(you) would have
+
+hacer		:		(to) do
+
+hacía		:		towards
+
+haciais		:		(you) used to do
+
+haciendo	:		doing
+
+//hagan		:		do it/that (command)
+
+hagas		:		(you) do it
+
+hago		:		(I) make
+
+//hala		:	
+
+han		:		(they) have
+
+hará		:		(he/she) will do
+
+harán		:		(they) will do
+
+harás		:		(you) will do
+
+haremos		:		(we) will do
+
+haré		:		(I) will do
+
+haría		:		(I) would
+
+haríamos	:		(we) would
+
+harían		:		(they) would
+
+has		:		(you) have
+
+hasta		:		until
+
+hay		:		there are
+
+//haya		:		to be
+
+he		:		(I) have
+
+hecho		:		(was) made
+
+hemos		:		(we) have
+
+Hermana		:		sister
+
+Hermano		:		brother
+
+hermoso		:		beautiful
+
+hice		:		(I) did / made
+
+hiciste		:		(you) did / made
+
+Historias	:		Stories / Histories
+
+hizo		:		did
+
+Hojas		:		Leaves / Sheets
+
+Hombro		:		Shoulder
+
+Hora		:		Hour
+
+Hoy		:		Today
+
+hubo		:		there was
+
+//hubiera		:		would have

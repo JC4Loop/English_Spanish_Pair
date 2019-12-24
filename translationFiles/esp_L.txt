@@ -14,9 +14,11 @@ lenguaje	:	language
 
 lenguages	:	languages
 
+lentamente	:	slowly
+
 limón		:	lemon
 
-limpiar		:	to clean
+limpiar		:	(to) clean
 
 en línea	:	on-line
 
@@ -24,42 +26,58 @@ lista		:	list
 
 llamada		:	calls
 
-llamará		:	he/she will call
+llamará		:	(he/she) will call
 
-llamaré		:	I will call
+llamaré		:	(I) will call
 
-llamaste	:	you called
+llamaste	:	(you) called
 
-las llaves	:	the keys
+llamó		:	(he/she) called
 
-llegar		:	to arrive
+las llaves	:	(the) keys
 
-llegará		:	he/she/it will arrive
+llega		:	(he/she) arrives
 
-llegaremos	:	we will arrive
+llegado		:	(had) arrived
 
-llegaste	:	you arrived
+llegar		:	(to) arrive
 
-llegué		:	I arrived
+llegará		:	(he/she/it) will arrive
 
-llenamos	:	we fill
+llegaremos	:	(we) will arrive
 
-llenar		:	to fill
+llegaste	:	(you) arrived
 
-llené		:	I filled
+llegué		:	(I) arrived
 
-llover		:	to rain
+llenamos	:	(we) fill
 
-lloverá		:	will rain
+llenar		:	(to) fill
 
-llovia		:	was raining
+llené		:	(I) filled
+
+//llevado	:	taken
+
+llover		:	(to) rain
+
+lloverá		:	(will) rain
+
+llovia		:	(was) raining
 
 llegó		:	arrived
 
-llamó		:	he/she called
+//llevar		:	Carry / bring /take/wear
+//llevó		:	Carried
+//llevado		:	Worn
 
 llueve		:	it rains
 
 lluvia		:	rain
 
-las luces	:	the lights
+Las Luces	:	The Lights
+
+
+
+// lavarnos	:	wash our
+//lentes	:	glasses
+//levantarse	:	you get up
