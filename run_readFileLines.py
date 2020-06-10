@@ -1,9 +1,11 @@
 from tkinter import *
-from PairInput import *
+import PairClasses as pc
 from pairDb import *
 
 def loadFile(option):
-	print("loadfile executed")
+	global pairsFromFile
+	pairsFromFile = []
+	textOutput.delete('1.0', END)
 	#fileSrc = "translationFiles/esp_L.txt"
 	fileSrc = "translationFiles/esp_" + option + ".txt"
 	print("fileSrc = ", fileSrc)
@@ -12,6 +14,7 @@ def loadFile(option):
 	linesCount = len(open(fileSrc).readlines())
 
 	print("lines in file", linesCount)
+	nPairs = 0
 
 	
 	
@@ -51,10 +54,12 @@ def loadFile(option):
 					else:
 						englishWord += fileLine[j]
 		
-			print("spanish word = ",spanishWord,len(spanishWord))
-			print("english word = ",englishWord,len(englishWord))
-			pairsFromFile.append(PairInput(spanishWord,englishWord))
+			#print("spanish word = ",spanishWord,len(spanishWord))
+			#print("english word = ",englishWord,len(englishWord))
+			pairsFromFile.append(pc.PairInput(spanishWord,englishWord))
+			nPairs += 1
 			textOutput.insert(END, "\t\t\tLenOfEsp " + str(len(spanishWord)) + "\t\t LenOfEng " + str(len(englishWord)) + "\n")
+	print(nPairs, "pairs from file")
 
 
 	#textOutput.insert(END,fileLine)
@@ -62,8 +67,9 @@ def loadFile(option):
 
 def selectedToLoad():
 	chosenLetter = ddVar.get()
-	print(chosenLetter)
-	loadFile(chosenLetter)
+	if chosenLetter != "Select letter":
+		print(chosenLetter)
+		loadFile(chosenLetter)
 
 
 def submitPairs():
@@ -80,8 +86,8 @@ Label(window, text="Language").grid(row=0,column=0,columnspan = 2)
 
 textOutput = Text(window, height = 20, width = 100,bg="black",fg="#99ff33", font=("Courier", 16))
 textOutput.grid(row=2,column=0,columnspan = 4)
-btnSpn = Button(window, text='Spanish', command = lambda: loadFile("Others"))
-btnSpn.grid(row=3, column=0,sticky=W,pady=4)
+btnSpn = Button(window, text='Others', command = lambda: loadFile("Others"))
+btnSpn.grid(row=3, column=1,sticky=W,pady=4)
 
 pairsFromFile = []
 
@@ -91,7 +97,7 @@ ddVar = StringVar(window)
 ddVar.set("Select letter") # initial value
 ddAz = OptionMenu(window, ddVar, *choices)
 ddAz.config(bg="white",font=("Courier",18))
-ddAz.grid(row = 3, column = 1, sticky = W)
+ddAz.grid(row = 3, column = 0, sticky = W)
 
 ddOptions = ddAz.nametowidget(ddAz.menuname) # gets menu of OptionMenu
 ddOptions.config(font=("Courier",14),bg="white") #font of the options

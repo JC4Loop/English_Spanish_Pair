@@ -21,6 +21,8 @@ Camarero	:	Waiter
 
 Cajón		:	Drawer
 
+calidad		:	quality
+
 caliente	:	hot
 
 //calor		:
@@ -37,9 +39,13 @@ campo		:	countryside / field
 
 cancelación	:	cancellation
 
+Cangrejo	:	Crab
+
 cansado		:	tired
 
 cantabas	:	(you) were singing
+
+cantidad	:	amount
 
 cargo		:	in charge / position
 
@@ -83,6 +89,8 @@ cita		:	appointment / date
 
 claramente	:	clearly
 
+clave		:	code / key
+
 clic		:	click
 
 cocinado	:	(had) cooked
@@ -102,6 +110,8 @@ cocine		:	(I) cooked
 cocinó		:	(he/she) cooked
 
 codo		:	elbow
+
+cola		:	line (queue)
 
 collectionaba	:	used to collect
 
@@ -135,6 +145,8 @@ competencia	:	competition
 
 compromiso	:	commitment
 
+concurso	:	contest
+
 condición	:	condition
 
 conduciendo	:	driving
@@ -144,6 +156,8 @@ condució	:	(he/she) drove
 conducir	:	(to) drive
 
 conduciremos	:	(we) will drive
+
+conducta	:	behaviour
 
 conduje		:	(I) drove
 
@@ -188,6 +202,8 @@ Cortinas	:	Curtains
 cosecha		:	harvest (gather food)
 
 cosa		:	thing
+
+crecimiento	:	growth
 
 crees		:	(you) believe / think
 

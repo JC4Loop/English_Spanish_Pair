@@ -8,7 +8,7 @@ class MovingWord:
 		if len(txt) > 8:
 			moreThan8 = len(txt) - 8
 			for i in range(0,moreThan8):
-				padding += 10
+				padding += 12
 
 		self.cID = MovingWord.gID
 		MovingWord.gID += 1
@@ -24,7 +24,7 @@ class MovingWord:
 		self.rectangle = MovingWord.canvas.create_rectangle(x,y,x + self.width , y + self.height ,fill = color,activefill='cyan')
 		self.Selected = False
 		self.text = txt
-		self.txtObj = MovingWord.canvas.create_text(x + 45 + (padding /2), y + 20, font=("Purisa", 12), text = txt,fill = "blue")
+		self.txtObj = MovingWord.canvas.create_text(x + 45 + (padding /2), y + 20, font=("Courier New", 14,"bold"), text = txt,fill = "blue")
 		self.mX = 0
 		self.mY = 0
 		self.waitingToMove = False

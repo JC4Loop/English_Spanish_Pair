@@ -1,15 +1,11 @@
 import psycopg2
-from Word import*
-from PairInput import *
+import PairClasses as pc
 from NonEngConversion import*
 
 def getConnection():
 	conn = psycopg2.connect(database = "engEspDeuDb", user = "justin", password = "password", host = "127.0.0.1", port = "5432")
 	return conn
 
-
-
- 
 def getPairs():
 	pairsToReturn = []
 	c = getConnection()
@@ -18,11 +14,11 @@ def getPairs():
 	rows = cur.fetchall()
 	for row in rows:
 		#print("ID = \t", row[0], end = '') # print without new line
-		#print("\tSpanish Word = ", row[1], end = '')
-		#print("\tEnglish Word = ", row[2])
 		espWord = replaceWithLatin1Char(row[1])
-		pairsToReturn.append(Word(espWord,row[0],"esp"))
-		pairsToReturn.append(Word(row[2],row[0],"eng"))
+		esp = pc.Word(espWord,row[0],"esp")
+		eng = pc.Word(row[2],row[0],"eng")
+		pairsToReturn.append(pc.Pair(esp,eng))
+
 
 	c.close()
 	return pairsToReturn
@@ -35,7 +31,7 @@ def getPairsByLetter(letter):
 	cur = c.cursor()
 	selquery = "SELECT  pairEngEsp.id, spanish.word, english.word,pairEngEsp.timescorrect,pairEngEsp.timesincorrect FROM english INNER JOIN pairEngEsp ON english.id = pairEngEsp.engId INNER JOIN spanish ON pairEngEsp.espId = spanish.Id WHERE lower(spanish.word) SIMILAR TO (%s) OR upper(spanish.word) SIMILAR TO (%s) ORDER BY timescorrect"
 			   #SELECT  pairEngEsp.id, spanish.word, english.word,pairEngEsp.timescorrect,pairEngEsp.timesincorrect FROM english INNER JOIN pairEngEsp ON english.id = pairEngEsp.engId INNER JOIN spanish ON pairEngEsp.espId = spanish.Id WHERE lower(spanish.word) SIMILAR TO 'l%' ORDER BY timescorrect;
-	
+
 
 	letLower = letLower + "%"
 	letter = letter + "%"
@@ -44,12 +40,12 @@ def getPairsByLetter(letter):
 	cur.execute(selquery,(letLower,letter))
 	rows = cur.fetchall()
 	for row in rows:
-		#print("ID = \t", row[0], end = '') # print without new line
 		#print("\tSpanish Word = ", row[1], end = '')
 		#print("\tEnglish Word = ", row[2])
 		espWord = replaceWithLatin1Char(row[1])
-		pairsToReturn.append(Word(espWord,row[0],"esp"))
-		pairsToReturn.append(Word(row[2],row[0],"eng"))
+		esp = pc.Word(espWord,row[0],"esp")
+		eng = pc.Word(row[2],row[0],"eng")
+		pairsToReturn.append(pc.Pair(esp,eng))
 
 	c.close()
 	return pairsToReturn
@@ -57,6 +53,7 @@ def getPairsByLetter(letter):
 
 
 def incrementTimesCorrect(pairID):
+	count = 0
 	try:
 		c = getConnection()
 		cur = c.cursor()
@@ -65,7 +62,6 @@ def incrementTimesCorrect(pairID):
 		cur.execute(updateQuery,(pairID,))
 		c.commit()
 		count = cur.rowcount
-		print(count, "Record Updated successfully ")
 
 	except(Exception,psycopg2.Error) as error:
 		print("Error in update",error)
@@ -74,9 +70,11 @@ def incrementTimesCorrect(pairID):
 		if (c):
 			cur.close()
 			c.close()
+			return count
 
 #when chosen pair is incorrect both pairIDs will be incremented
 def incrementTimesInCor(pairID1,pairID2):
+	count = 0
 	try:
 		c = getConnection()
 		cur = c.cursor()
@@ -84,7 +82,7 @@ def incrementTimesInCor(pairID1,pairID2):
 		cur.execute(updateQuery,(pairID1,pairID2))
 		c.commit()
 		count = cur.rowcount
-		print(count,"Updates successful (incorrect incremented)")
+		#print(count,"Updates successful (incorrect incremented)")
 
 	except(Exception,psycopg2.Error) as error:
 		print("Error in incor update",error)
@@ -93,6 +91,7 @@ def incrementTimesInCor(pairID1,pairID2):
 		if(c):
 			cur.close()
 			c.close()
+			return count
 
 def handleAllInput(pairsCollection):
 	count = 0

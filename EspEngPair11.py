@@ -1,6 +1,6 @@
 #from tkinter import*
 from MovingWord import *
-import time
+import time , threading
 from random import shuffle
 from pairDb import*
 
@@ -8,15 +8,20 @@ def resetGlobals():
 	global global_running, global_runLoop
 	global c,numLeft, pairsData, maxOnScreen
 	global selectedCs, activeComponents, finishedComponents,global_incorrectPair,lastPlaced
+	global lCorrectPairsIncrement, lWrongPairsIncrement, incThread
+	global bSqlite
 	global_running = False
 	global_runLoop = True
-	c = None
+	bSqlite = False
+	c = IncThread = None
 	numLeft = None
 	pairsData = None
 	maxOnScreen = None
 	selectedCs = []
 	activeComponents = []
 	finishedComponents = []
+	lCorrectPairsIncrement = []
+	lWrongPairsIncrement = []
 	global_incorrectPair = {"iPair":False,"num":0}
 	lastPlaced = 0
 
@@ -43,11 +48,7 @@ def prepareRemoveFromActiveComps(pID):
 		if (len(pairsData) - lastPlaced) > 0:
 			print("now should require next set")
 			preparePairs(pairsData,maxOnScreen)
-			'''
-		else:
-			global global_runLoop
-			global_runLoop = False
-			print("global_runLoop is false")'''
+
 		
 	
 def bindComponent(obj):
@@ -66,7 +67,10 @@ def objectClicked(event,obj):
 				pairFoundAni(pairID)
 			else:
 				#print("Incorrect Pair")
-				incrementTimesInCor(pairID,selectedCs[1].pairID)
+				if bSqlite == False:
+					lWrongPairsIncrement.append(pairID)
+					lWrongPairsIncrement.append(selectedCs[1].pairID)
+					#incrementTimesInCor(pairID,selectedCs[1].pairID)
 				global_incorrectPair["iPair"] = True
 
 def componentSelected(obj):
@@ -90,7 +94,8 @@ def incorrectPairtoRed():
 	c.itemconfig(selectedCs[1].rectangle, fill = "red")
 
 def pairFoundAni(pairID):
-	incrementTimesCorrect(pairID)
+	if bSqlite == False:
+		lCorrectPairsIncrement.append(pairID)
 	selectedCs[0].setMY(-5)
 	selectedCs[1].setMY(-5)
 	#print("Found pair With pairID:",pairID)
@@ -169,10 +174,52 @@ def movementCalc(frameCount):
 			removeFromActiveComps(activeComponents[i].cID)
 #------------------------------------------------------------------END movementCalc
 
-def StartCanvas(tk,letter,pairsD):
-	global global_running, global_runLoop
-	global pairsData,activeComponents
-	global c
+def checkIncrementThread():
+	global lWrongPairsIncrement,lCorrectPairsIncrement,incThread
+	if len(lWrongPairsIncrement) > 0 or len(lCorrectPairsIncrement) > 0:
+		# if not using SQLite database, using Postgres
+		if bSqlite == False:
+			if incThread == None:
+				incThread = thread_Increment(lCorrectPairsIncrement,lWrongPairsIncrement)
+				incThread.start()
+				lWrongPairsIncrement = []
+				lCorrectPairsIncrement = []
+			else:
+				if not incThread.is_alive():
+					try:
+						incThread.start()
+					except RuntimeError:
+						print("attempting to create thread again")
+						incThread = thread_Increment(lCorrectPairsIncrement,lWrongPairsIncrement)
+						incThread.start()
+					lCorrectPairsIncrement = []
+					lWrongPairsIncrement = []
+
+class thread_Increment (threading.Thread):
+	def __init__(self, cpInc,wpInc):
+		threading.Thread.__init__(self)
+		self.cpInc = cpInc
+		self.wpInc = wpInc
+
+	def run(self):
+		wpSize = len(self.wpInc)
+		cCount = wCount = 0
+		if wpSize % 2 != 0:
+			print("SERIOUS ERROR in wrong pairs list!")
+		for i in range(len(self.wpInc)):
+			print(self.wpInc[i])
+			if i % 2 == 0:
+				print("i = ",i)
+				wCount += incrementTimesInCor(self.wpInc[i],self.wpInc[i+1])
+		for i in range(len(self.cpInc)):
+			print(self.cpInc[i])
+			cCount += incrementTimesCorrect(self.cpInc[i])
+		print("Incremented",cCount,"correct pairs\tIncremented",wCount,"wrong pairs")
+
+def StartCanvas(tk,letter,pairsD,bsql):
+	global global_running, global_runLoop,bSqlite
+	global pairsData,activeComponents, lWrongPairsIncrement,lCorrectPairsIncrement
+	global c, incThread
 	global lastPlaced, maxOnScreen
 	if global_running == False:
 		print("false - beginning run")
@@ -189,11 +236,12 @@ def StartCanvas(tk,letter,pairsD):
 		c.create_rectangle(0,0,800,800, fill="black")
 		c.create_image((500, 500), image = small_img)
 		MovingWord.initCanvas(c)
-		
 		lastPlaced = 0
 		maxOnScreen = 8
 		preparePairs(pairsData,maxOnScreen)
 		print("last placed outside func is",lastPlaced)
+		bSqlite = bsql
+		print(bSqlite)
 
 		frameCount = 0
 		second = 0
@@ -214,7 +262,6 @@ def StartCanvas(tk,letter,pairsD):
 
 			except:
 				print("Caught gui.update() error") # error only occurs on close
-				#global_running = False
 				resetGlobals()
 				break
 
@@ -223,8 +270,12 @@ def StartCanvas(tk,letter,pairsD):
 			if frameCount >= 100:
 				frameCount = 0
 				second += 1
-				if (second == 10):
+				if (second == 5):
 					second = 0
+					checkIncrementThread()
+					
+				#print("second 5, setting to 0")
+					
 
 			if global_incorrectPair["iPair"] == True:
 				if(global_incorrectPair["num"] == 0 or global_incorrectPair["num"] == 60):
@@ -239,8 +290,8 @@ def StartCanvas(tk,letter,pairsD):
 					#set the two incorrect pairs to be unselected
 					componentSelected(selectedCs[1])
 					componentSelected(selectedCs[0])
-		print("finished")
-		#global_running = False
+		print("finished - checking incrementThread")
+		checkIncrementThread()
 		resetGlobals()
 		gui.destroy() # close the gui window, not the whole program
 
@@ -251,12 +302,15 @@ def StartCanvas(tk,letter,pairsD):
 
 global_running = False
 global_runLoop = True
+bSqlite = False
 c = None
 numLeft = None
 pairsData = None
-maxOnScreen = None
+maxOnScreen = incThread = None
 selectedCs = []
 activeComponents = []
 finishedComponents = []
+lCorrectPairsIncrement = []
+lWrongPairsIncrement = []
 global_incorrectPair = {"iPair":False,"num":0}
 lastPlaced = 0

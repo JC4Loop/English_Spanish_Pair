@@ -1,6 +1,6 @@
 #	sqlite datebase for EspEngPair
 
-#-- CREATE DATABASE---
+#-- CREATE DATABASE / Log In---
 sqlite3 EspEng.db
 
 #---CREATE TABLES---
@@ -10,10 +10,207 @@ CREATE TABLE english( id INTEGER PRIMARY KEY AUTOINCREMENT, word VARCHAR(30) NOT
 
 CREATE TABLE pairTable(	espId INTEGER NOT NULL,engId INTEGER NOT NULL,FOREIGN KEY (espId) REFERENCES spanish (id) ON DELETE SET NULL, FOREIGN KEY (engId) REFERENCES english (id) ON DELETE SET NULL, PRIMARY KEY (espId,engId));
 
+CREATE TABLE Conjugation( espId INTEGER NOT NULL, Mood VARCHAR(19), Tense VARCHAR(15), Grammatical_Person VARCHAR(15), FOREIGN KEY (espId) REFERENCES spanish (id) , PRIMARY KEY (espId,Mood,Tense,Grammatical_Person) );
+
+
+# TEST DATA
 INSERT INTO spanish (word) VALUES ('Espejo');
 INSERT INTO english (word) VALUES ('Mirror');
+
+INSERT INTO spanish (word) SELECT 'tengo' WHERE NOT EXISTS (SELECT id FROM spanish WHERE word ='tengo');
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tengo'), 'Indicative','Present','yo' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tengo') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Present' FROM Conjugation WHERE Tense = 'Present') AND Grammatical_Person = (SELECT 'yo' FROM Conjugation WHERE Grammatical_Person = 'yo'));
+
+INSERT INTO english (word) SELECT 'I have' WHERE NOT EXISTS (SELECT id FROM english WHERE word ='I have');
+
+// independant of primary key value + prevents unique contraint failure
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tengo'), (SELECT id AS eID FROM english WHERE word = 'I have') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tengo') AND engId = (SELECT english.id FROM english WHERE english.word = 'I have'))
+
+
+
+INSERT INTO spanish (word) SELECT 'tienes' WHERE NOT EXISTS (SELECT id FROM spanish WHERE word ='tienes');
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tienes'), 'Indicative','Present','tú' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tienes') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Present' FROM Conjugation WHERE Tense = 'Present') AND Grammatical_Person = (SELECT 'tú' FROM Conjugation WHERE Grammatical_Person = 'tú'));
+
+INSERT INTO english (word) SELECT 'you have' WHERE NOT EXISTS (SELECT id FROM english WHERE word ='you have');
+
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tienes'), (SELECT id AS eID FROM english WHERE word = 'you have') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tienes') AND engId = (SELECT english.id FROM english WHERE english.word = 'you have'))
+
+
+INSERT INTO spanish (word) SELECT 'tenemos' WHERE NOT EXISTS (SELECT id FROM spanish WHERE word ='tenemos');
+
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tenemos'), 'Indicative','Present','nosotros' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tenemos') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Present' FROM Conjugation WHERE Tense = 'Present') AND Grammatical_Person = (SELECT 'nosotros' FROM Conjugation WHERE Grammatical_Person = 'nosotros'));
+
+INSERT INTO english (word) SELECT 'we have' WHERE NOT EXISTS (SELECT id FROM english WHERE word ='we have');
+
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tenemos'), (SELECT id AS eID FROM english WHERE word = 'we have') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tenemos') AND engId = (SELECT english.id FROM english WHERE english.word = 'we have'))
+
+
+INSERT INTO spanish (word) SELECT 'tienen' WHERE NOT EXISTS (SELECT id FROM spanish WHERE word ='tienen');
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tienen'), 'Indicative','Present','ellos/ellas/Uds' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tienen') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Present' FROM Conjugation WHERE Tense = 'Present') AND Grammatical_Person = (SELECT 'ellos/ellas/Uds' FROM Conjugation WHERE Grammatical_Person = 'ellos/ellas/Uds'));
+
+INSERT INTO english (word) SELECT 'they have' WHERE NOT EXISTS (SELECT id FROM english WHERE word ='they have');
+
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tienen'), (SELECT id AS eID FROM english WHERE word = 'they have') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tienen') AND engId = (SELECT english.id FROM english WHERE english.word = 'they have'))
+
+
+INSERT INTO spanish (word) VALUES ('tuve');
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tuve'), 'Indicative','Preterite','yo' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tuve') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Preterite' FROM Conjugation WHERE Tense = 'Preterite') AND Grammatical_Person = (SELECT 'yo' FROM Conjugation WHERE Grammatical_Person = 'yo'));
+
+INSERT INTO english (word) VALUES ('I had');
+
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tuve'), (SELECT id AS eID FROM english WHERE word = 'I had') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tuve') AND engId = (SELECT english.id FROM english WHERE english.word = 'I had'))
+
+INSERT INTO spanish (word) Values ('tuviste');
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tuviste'), 'Indicative','Preterite','tú' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tuviste') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Preterite' FROM Conjugation WHERE Tense = 'Preterite') AND Grammatical_Person = (SELECT 'tú' FROM Conjugation WHERE Grammatical_Person = 'tú'));
+
+INSERT INTO english (word) VALUES ('you had');
+
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tuviste'), (SELECT id AS eID FROM english WHERE word = 'you had') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tuviste') AND engId = (SELECT english.id FROM english WHERE english.word = 'you had'));
+
+
+INSERT INTO spanish (word) VALUES ('tuvo');
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tuvo'), 'Indicative','Preterite','él/ella/Ud' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tuvo') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Preterite' FROM Conjugation WHERE Tense = 'Preterite') AND Grammatical_Person = (SELECT 'él/ella/Ud' FROM Conjugation WHERE Grammatical_Person = 'él/ella/Ud'));
+
+INSERT INTO english (word) VALUES ('he/she had');
+
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tuvo'), (SELECT id AS eID FROM english WHERE word = 'he/she had') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tuvo') AND engId = (SELECT english.id FROM english WHERE english.word = 'he/she had'));
+
+
+INSERT INTO spanish (word) VALUES ('tuvimos');
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tuvimos'), 'Indicative','Preterite','nosotros' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tuvimos') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Preterite' FROM Conjugation WHERE Tense = 'Preterite') AND Grammatical_Person = (SELECT 'nosotros' FROM Conjugation WHERE Grammatical_Person = 'nosotros'));
+
+INSERT INTO english (word) VALUES ('we had');
+
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tuvimos'), (SELECT id AS eID FROM english WHERE word = 'we had') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tuvimos') AND engId = (SELECT english.id FROM english WHERE english.word = 'we had'));
+
+
+INSERT INTO spanish (word) VALUES ('tuvieron');
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tuvieran'), 'Indicative','Preterite','ellos/ellas/Uds' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tuvieran') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Preterite' FROM Conjugation WHERE Tense = 'Preterite') AND Grammatical_Person = (SELECT 'ellos/ellas/Uds' FROM Conjugation WHERE Grammatical_Person = 'ellos/ellas/Uds'));
+
+INSERT INTO english (word) VALUES ('they had');
+
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tuvieron'), (SELECT id AS eID FROM english WHERE word = 'they had') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tuvieron') AND engId = (SELECT english.id FROM english WHERE english.word = 'they had'));
+
+
+INSERT INTO spanish (word) VALUES ('tendré');
+INSERT INTO Conjugation (Mood,Tense,Grammatical_Person,espID) SELECT 'Indicative','Future','yo',(SELECT spanish.id FROM spanish WHERE spanish.word = 'tendré') WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID =  (SELECT spanish.id FROM spanish WHERE spanish.word = 'tendré'));
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tendré'), 'Indicative','Future','yo' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tendré') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Future' FROM Conjugation WHERE Tense = 'Future') AND Grammatical_Person = (SELECT 'yo' FROM Conjugation WHERE Grammatical_Person = 'yo'));
+
+INSERT INTO english (word) VALUES ('I will have');
+
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tendré'), (SELECT id AS eID FROM english WHERE word = 'I will have') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tendré') AND engId = (SELECT english.id FROM english WHERE english.word = 'I will have'));
+
+
+INSERT INTO spanish (word) VALUES ('tendrás');
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tendrás'), 'Indicative','Future','tú' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tendrás') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Future' FROM Conjugation WHERE Tense = 'Future') AND Grammatical_Person = (SELECT 'yo' FROM Conjugation WHERE Grammatical_Person = 'tú'));
+
+INSERT INTO english (word) VALUES ('you will have');
+
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tendrás'), (SELECT id AS eID FROM english WHERE word = 'you will have') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tendrás') AND engId = (SELECT english.id FROM english WHERE english.word = 'you will have'));
+
+
+INSERT INTO spanish (word) VALUES ('tendrá');
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tendrá'), 'Indicative','Future','él/ella/Ud' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tendrá') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Future' FROM Conjugation WHERE Tense = 'Future') AND Grammatical_Person = (SELECT 'él/ella/Ud' FROM Conjugation WHERE Grammatical_Person = 'él/ella/Ud'));
+
+INSERT INTO english (word) VALUES ('he/she will have');
+
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tendrá'), (SELECT id AS eID FROM english WHERE word = 'he/she will have') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tendrá') AND engId = (SELECT english.id FROM english WHERE english.word = 'he/she will have'));
+
+
+INSERT INTO spanish (word) VALUES ('tendremos');
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tendremos'), 'Indicative','Future','nosotros' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tendremos') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Future' FROM Conjugation WHERE Tense = 'Future') AND Grammatical_Person = (SELECT 'nosotros' FROM Conjugation WHERE Grammatical_Person = 'nosotros'));
+
+INSERT INTO english (word) VALUES ('we will have');
+
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tendremos'), (SELECT id AS eID FROM english WHERE word = 'we will have') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tendremos') AND engId = (SELECT english.id FROM english WHERE english.word = 'we will have'));
+
+
+INSERT INTO spanish (word) VALUES ('tendrán');
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tendrán'), 'Indicative','Future','ellos/ellas/Uds' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tendrán') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Future' FROM Conjugation WHERE Tense = 'Future') AND Grammatical_Person = (SELECT 'ellos/ellas/Uds' FROM Conjugation WHERE Grammatical_Person = 'ellos/ellas/Uds'));
+
+INSERT INTO english (word) VALUES ('they will have');
+
+INSERT INTO pairTable(espId,engId) SELECT (SELECT id AS sID FROM spanish WHERE word = 'tendrán'), (SELECT id AS eID FROM english WHERE word = 'they will have') WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tendrán') AND engId = (SELECT english.id FROM english WHERE english.word = 'they will have'));
+
+INSERT INTO pairTable(espId,engId) SELECT 2,2 WHERE NOT EXISTS (SELECT espId,engId FROM pairTable WHERE espId = 2 AND engId = 2);
+
+
+
+
+INSERT INTO spanish(word) VALUES ('tendría');
+INSERT INTO Conjugation (Mood,Tense,Grammatical_Person,espID) VALUES ('Indicative','Conditional','yo',(SELECT spanish.id FROM spanish WHERE spanish.word = 'tendría'));
+
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) SELECT (SELECT id FROM spanish WHERE spanish.word = 'tendría'), 'Indicative','Conditional','yo' WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID = (SELECT spanish.id FROM spanish WHERE spanish.word = 'tendría') AND Mood = (SELECT 'Indicative' FROM Conjugation WHERE Mood = 'Indicative') AND Tense = (SELECT 'Conditional' FROM Conjugation WHERE Tense = 'Conditional') AND Grammatical_Person = (SELECT 'yo' FROM Conjugation WHERE Grammatical_Person = 'yo'));
+
+INSERT INTO english (word) VALUES ('I would have');
+INSERT INTO english (word) SELECT 'they have' WHERE NOT EXISTS (SELECT id FROM english WHERE word ='they have');
+
+INSERT INTO spanish(word) VALUES ('tendrías');
+INSERT INTO Conjugation (Mood,Tense,Grammatical_Person,espID) VALUES ('Indicative','Conditional','tú',(SELECT spanish.id FROM spanish WHERE spanish.word = 'tendrías'));
+INSERT INTO english (word) VALUES ('you would have');
+
+INSERT INTO spanish (word) SELECT 'tendría' WHERE NOT EXISTS (SELECT id FROM spanish WHERE word ='tendría');
+INSERT INTO Conjugation (Mood,Tense,Grammatical_Person,espID) VALUES ('Indicative','Conditional','él/ella/Ud',(SELECT spanish.id FROM spanish WHERE spanish.word = 'tendría'));
+INSERT INTO english (word) SELECT 'he/she would have' WHERE NOT EXISTS (SELECT id FROM english WHERE word ='he/she would have');
+
+INSERT INTO spanish (word) SELECT 'tendríamos' WHERE NOT EXISTS (SELECT id FROM spanish WHERE word ='tendríamos');
+INSERT INTO Conjugation (Mood,Tense,Grammatical_Person,espID) VALUES ('Indicative','Conditional','nosotros',(SELECT spanish.id FROM spanish WHERE spanish.word = 'tendríamos'));
+INSERT INTO english (word) SELECT 'we would have' WHERE NOT EXISTS (SELECT id FROM english WHERE word ='we would have');
+
+INSERT INTO spanish (word) SELECT 'tendrían' WHERE NOT EXISTS (SELECT id FROM spanish WHERE word ='tendrían');
+INSERT INTO Conjugation (Mood,Tense,Grammatical_Person,espID) VALUES ('Indicative','Conditional','ellos/ellas/Uds',(SELECT spanish.id FROM spanish WHERE spanish.word = 'tendrían'));
+INSERT INTO english (word) SELECT 'they would have' WHERE NOT EXISTS (SELECT id FROM english WHERE word ='they would have');
+
+
+
+
+
 
 INSERT INTO pairTable(espId,engId) VALUES (1,1);
 
 SELECT spanish.Id AS SpaId ,english.Id AS EngID, english.word AS English, spanish.word AS Spanish FROM english INNER JOIN pairTable ON pairTable.engId = english.id INNER JOIN spanish ON spanish.Id = pairTable.espId;
+
+SELECT spanish.Id AS SpaId ,english.Id AS EngID, english.word AS English, spanish.word AS Spanish, Mood, Tense, Grammatical_Person FROM english INNER JOIN pairTable ON pairTable.engId = english.id INNER JOIN spanish ON spanish.Id = pairTable.espId INNER JOIN Conjugation ON Conjugation.espID = spanish.id;
+
+SELECT spanish.Id AS SpaId ,english.Id AS EngID, english.word AS English, spanish.word AS Spanish, Mood, Tense, Grammatical_Person FROM english LEFT JOIN pairTable ON pairTable.engId = english.id LEFT JOIN spanish ON spanish.Id = pairTable.espId LEFT JOIN Conjugation ON Conjugation.espID = spanish.id;
+
+
+---- Alternatives---
+
+// Inserts into conjugation but does not prevent duplicates
+INSERT INTO Conjugation(espId,Mood,Tense,Grammatical_Person) VALUES((SELECT spanish.id FROM spanish WHERE spanish.word = 'tengo'),'Indicative','Present','yo');
+
+
+--- Old , no longer used---
+
+// prevents duplicate input, however table already has unique contraint - prevents unique constraint from failing by choosing not to insert
+INSERT INTO Conjugation (Mood,Tense,Grammatical_Person,espID) SELECT 'Indicative','Present','yo',(SELECT spanish.id FROM spanish WHERE spanish.word = 'tengo') WHERE NOT EXISTS (SELECT espID FROM Conjugation WHERE espID =  (SELECT spanish.id FROM spanish WHERE spanish.word = 'tengo'));
+
+INSERT INTO pairTable(espId,engId) VALUES (3,3);	// reliant on ids
+INSERT INTO pairTable(espId,engId) VALUES (4,4);
+INSERT INTO pairTable(espId,engId) VALUES (5,5);
+INSERT INTO pairTable(espId,engId) VALUES (6,6);
+INSERT INTO pairTable(espId,engId) VALUES (7,7);
+INSERT INTO pairTable(espId,engId) VALUES (8,8);
+INSERT INTO pairTable(espId,engId) VALUES (9,9);
+INSERT INTO pairTable(espId,engId) VALUES (10,10);
+INSERT INTO pairTable(espId,engId) VALUES (11,11);
+INSERT INTO pairTable(espId,engId) VALUES (12,12);
+INSERT INTO pairTable(espId,engId) VALUES (13,13);
+INSERT INTO pairTable(espId,engId) VALUES (14,14);
+INSERT INTO pairTable(espId,engId) VALUES (15,15);
+
 

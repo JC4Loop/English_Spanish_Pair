@@ -351,27 +351,3 @@ usaste		:	(you) used
 
 usualmente	:	usually
 
-vacío		:	empty
-
-Vaqueros	:	Jeans
-
-vivido		:	(had) lived
-
-Venido		:	(he/she) Come
-
-venimos		:	(had) come
-
-verdadero	:	true
-
-verán		:	(they) will see
-
-Vestíbulo	:	Lobby
-
-viajar		:	(to) travel
-
-viajaron	:	(they) traveled
-
-viejo		:	old
-
-Visto		:	(had) seen
-
